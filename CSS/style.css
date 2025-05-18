@@ -6,6 +6,9 @@ body {
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 0 10px;
 }
 
 /* NAVIGATION */
@@ -15,6 +18,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -23,10 +27,14 @@ nav a {
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.3s ease;
+  outline-offset: 2px;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
   color: #4a90e2;
+  outline: 2px solid #4a90e2;
+  outline-offset: 3px;
 }
 
 /* HERO SECTION */
@@ -112,8 +120,10 @@ p {
   font-weight: 600;
 }
 
-.upcoming-work-note a:hover {
+.upcoming-work-note a:hover,
+.upcoming-work-note a:focus {
   text-decoration: underline;
+  outline: none;
 }
 
 /* PHOTOGRAPHY SECTION */
@@ -143,10 +153,14 @@ p {
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.3s ease;
+  cursor: pointer;
+  outline-offset: 3px;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus {
   background-color: #cc0000;
+  outline: 2px solid #cc0000;
 }
 
 /* LINKS */
@@ -154,8 +168,35 @@ a {
   color: #4a90e2;
   text-decoration: none;
   font-weight: bold;
+  outline-offset: 2px;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+  outline: 2px solid #4a90e2;
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .project-thumb {
+    width: 100%;
+  }
+
+  nav {
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 40px 10px;
+  }
 }
